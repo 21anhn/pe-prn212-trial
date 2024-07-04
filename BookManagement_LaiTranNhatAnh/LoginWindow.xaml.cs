@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL.Services;
 
 namespace BookManagement_LaiTranNhatAnh
 {
@@ -19,22 +20,36 @@ namespace BookManagement_LaiTranNhatAnh
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private UserService _userService;
+
         public LoginWindow()
         {
             InitializeComponent();
+            _userService = new();
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            string username = TbUsername.Text;
-            string password = PbPassword.Password;
-            MessageBox.Show($"Username: {username}, password: {password}");
+            string username = UsernameTextBox.Text;
+            string password = PasswordPasswordBox.Password;
+            bool checkLogin = _userService.checkUserLogin(username, password);
+            if (checkLogin)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect email or password!");
+            }
+
         }
 
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
-            TbUsername.Clear();
-            PbPassword.Clear();
+            UsernameTextBox.Clear();
+            PasswordPasswordBox.Clear();
         }
     }
 }

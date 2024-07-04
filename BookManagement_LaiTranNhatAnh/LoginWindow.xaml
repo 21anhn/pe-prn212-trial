@@ -10,11 +10,11 @@
         <Rectangle HorizontalAlignment="Center" Height="260" Stroke="Black" VerticalAlignment="Center" RadiusX="21.52" RadiusY="21.52" Width="520"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="161,105,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="161,157,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login Form" HorizontalAlignment="Left" Margin="248,44,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
-        <TextBox x:Name="TbUsername" HorizontalAlignment="Left" Margin="243,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="PbPassword" HorizontalAlignment="Left" Margin="243,163,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="243,209,0,0" VerticalAlignment="Top" Width="60" Click="BtnLogin_Click"/>
-        <Button x:Name="BtnReset" Content="Reset" HorizontalAlignment="Left" Margin="308,209,0,0" VerticalAlignment="Top" Width="60" Click="BtnReset_Click"/>
+        <Label Content="Login Form" HorizontalAlignment="Left" Margin="248,44,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" FontFamily="Bodoni MT Black"/>
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Margin="243,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="PasswordPasswordBox" HorizontalAlignment="Left" Margin="243,163,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="243,209,0,0" VerticalAlignment="Top" Width="60" Click="BtnLogin_Click"/>
+        <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Margin="308,209,0,0" VerticalAlignment="Top" Width="60" Click="BtnReset_Click"/>
 
     </Grid>
 </Window>

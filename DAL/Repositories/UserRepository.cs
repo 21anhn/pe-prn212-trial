@@ -11,7 +11,7 @@ namespace DAL.Repositories
     {
         BookManagementDbContext _context;
 
-        public UserAccount checkLogin(string email, string password)
+        public UserAccount CheckLogin(string email, string password)
         {
             _context = new();
             var user = _context.UserAccounts.FirstOrDefault(user => email == user.Email && password == user.Password);

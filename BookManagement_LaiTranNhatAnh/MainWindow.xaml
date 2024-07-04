@@ -8,11 +8,22 @@
         Title="Main Book Management Window" Height="500" Width="800"
         FontFamily="Arial"
         FontSize="14"
-        Background="#FFD4F7D4" WindowStartupLocation="CenterScreen">
+        Background="#FFD4F7D4" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="ListBookDataGrid" Margin="20,111,160,65">
-            
+        <DataGrid x:Name="ListBookDataGrid" Margin="20,184,160,20" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="BookId" Binding="{Binding BookId}" Width="auto"/>
+                <DataGridTextColumn Header="BookName" Binding="{Binding BookName}" Width="auto"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="auto"/>
+                <DataGridTextColumn Header="PublicationDate" Binding="{Binding PublicationDate}" Width="auto"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="auto"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="auto"/>
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}" Width="auto"/>
+                <DataGridTextColumn Header="BookCategoryId " Binding="{Binding BookCategoryId }" Width="auto"/>
+                <DataGridTextColumn Header="BookGenreType " Binding="{Binding BookCategory.BookGenreType }" Width="auto"/>
+            </DataGrid.Columns>
         </DataGrid>
+        <Label Content="List Book" HorizontalAlignment="Left" Margin="20,155,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
 
     </Grid>
 </Window>

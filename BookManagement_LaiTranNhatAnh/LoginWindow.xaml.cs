@@ -32,7 +32,7 @@ namespace BookManagement_LaiTranNhatAnh
         {
             string username = UsernameTextBox.Text;
             string password = PasswordPasswordBox.Password;
-            var userLogin = _userService.checkUserLogin(username, password);
+            var userLogin = _userService.CheckUserLogin(username, password);
             if (userLogin != null)
             {
                 //1-Admin, 2-Staff

@@ -8,13 +8,14 @@ using DAL.Repositories;
 
 namespace BLL.Services
 {
-    public class UserService
+    public class BookService
     {
-        private UserRepository _userRepository = new();
+        private BookRepository _bookRepository;
 
-        public UserAccount CheckUserLogin(string email, string password)
+        public List<Book> GetAllBooks()
         {
-            return _userRepository.CheckLogin(email, password);
+            _bookRepository = new();
+            return _bookRepository.GetAll();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL.Models;
 
 namespace BookManagement_LaiTranNhatAnh
 {
@@ -16,9 +17,18 @@ namespace BookManagement_LaiTranNhatAnh
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UserAccount CurrentUser { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        public MainWindow(UserAccount userAccount)
+        {
+            InitializeComponent();
+            CurrentUser = userAccount;
+        }
+
     }
 }

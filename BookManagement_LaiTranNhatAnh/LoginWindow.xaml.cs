@@ -32,12 +32,20 @@ namespace BookManagement_LaiTranNhatAnh
         {
             string username = UsernameTextBox.Text;
             string password = PasswordPasswordBox.Password;
-            bool checkLogin = _userService.checkUserLogin(username, password);
-            if (checkLogin)
+            var userLogin = _userService.checkUserLogin(username, password);
+            if (userLogin != null)
             {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Hide();
+                //1-Admin, 2-Staff
+                if(userLogin.Role == 1 || userLogin.Role == 2)
+                {
+                    MainWindow mainWindow = new MainWindow(userLogin);
+                    mainWindow.Show();
+                    Close();
+                }
+                else //Else role Member
+                {
+                    MessageBox.Show("You have no permission to access this function!");
+                }
             }
             else
             {

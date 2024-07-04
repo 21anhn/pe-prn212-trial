@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookManagement_LaiTranNhatAnh"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Main Book Management Window" Height="500" Width="800"
+        FontFamily="Arial"
+        FontSize="14"
+        Background="#FFD4F7D4" WindowStartupLocation="CenterScreen">
     <Grid>
+        <DataGrid x:Name="ListBookDataGrid" Margin="20,111,160,65">
+            
+        </DataGrid>
 
     </Grid>
 </Window>

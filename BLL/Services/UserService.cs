@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Models;
 using DAL.Repositories;
 
 namespace BLL.Services
@@ -11,7 +12,7 @@ namespace BLL.Services
     {
         private UserRepository _userRepository = new();
 
-        public bool checkUserLogin(string email, string password)
+        public UserAccount checkUserLogin(string email, string password)
         {
             return _userRepository.checkLogin(email, password);
         }

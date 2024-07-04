@@ -11,11 +11,11 @@ namespace DAL.Repositories
     {
         BookManagementDbContext _context;
 
-        public bool checkLogin(string email, string password)
+        public UserAccount checkLogin(string email, string password)
         {
             _context = new();
             var user = _context.UserAccounts.FirstOrDefault(user => email == user.Email && password == user.Password);
-            return user != null;
+            return user;
         }
     }
 }

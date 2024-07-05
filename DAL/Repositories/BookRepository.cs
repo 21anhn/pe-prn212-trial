@@ -29,5 +29,17 @@ namespace DAL.Repositories
                 .Where(b => b.BookName.Contains(bookName) || b.Description.Contains(description))
                 .Include(book => book.BookCategory).ToList();
         }
+
+        public bool DeleteBook(Book b)
+        {
+            _context = new();
+            if (b != null)
+            {
+                _context.Books.Remove(b);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -29,6 +29,9 @@
         <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="271,92,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120"/>
         <Label Content="Or" HorizontalAlignment="Left" Margin="233,89,0,0" VerticalAlignment="Top" FontSize="13" FontFamily="Arial Black" RenderTransformOrigin="0.662,-2.302"/>
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="410,91,0,0" VerticalAlignment="Top" Click="SearchButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="662,394,0,0" VerticalAlignment="Top" Height="40" Width="100" Click="DeleteButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="662,299,0,0" VerticalAlignment="Top" Height="40" Width="100"/>
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="662,217,0,0" VerticalAlignment="Top" Height="40" Width="100"/>
 
     </Grid>
 </Window>

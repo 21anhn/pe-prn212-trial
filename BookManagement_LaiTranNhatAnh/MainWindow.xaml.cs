@@ -60,5 +60,26 @@ namespace BookManagement_LaiTranNhatAnh
                 MessageBox.Show($"Not found any books with book name: {bookName} and description: {description}");
             }
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            //Only Admin can delete
+            if(CurrentUser.Role != 1)
+            {
+                MessageBox.Show("You have no permission to access this function!", "Warning", MessageBoxButton.OK);
+                return;
+            }
+            var book = ListBookDataGrid.SelectedItem as Book;
+            var result = MessageBox.Show("Do you want to delete this book?", "Confirm deletion", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                bool checkDelete = _bookService.DeleteBook(book);
+                if (checkDelete)
+                {
+                    ResetListBookDataGrid();
+                }
+            }
+        }
     }
 }

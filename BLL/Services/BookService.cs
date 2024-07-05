@@ -22,5 +22,10 @@ namespace BLL.Services
         {
             return _bookRepository.GetAllBookByBookNameOrDescription(bookName, description);
         }
+
+        public bool DeleteBook(Book b)
+        {
+            return _bookRepository.DeleteBook(b);
+        }
     }
 }

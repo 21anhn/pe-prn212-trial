@@ -1,4 +1,4 @@
-# Book Management Application - PRN212 Trial Test
+# Book Management Application - PRN212 (WPF C#) Trial Test
 This is a WPF application for managing books, developed as part of the PRN212 course. The application includes functionalities such as user authentication, book listing, adding, editing, and deleting books. The application enforces role-based access control where only administrators have full CRUD permissions.
 ## Introduction
 

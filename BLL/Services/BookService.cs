@@ -17,5 +17,10 @@ namespace BLL.Services
             _bookRepository = new();
             return _bookRepository.GetAll();
         }
+
+        public List<Book> SearchBooksByNameOrDescriptionContaining(string bookName, string description)
+        {
+            return _bookRepository.GetAllBookByBookNameOrDescription(bookName, description);
+        }
     }
 }

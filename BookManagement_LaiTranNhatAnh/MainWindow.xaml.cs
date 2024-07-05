@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BLL.Services;
 using DAL.Models;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BookManagement_LaiTranNhatAnh
 {
@@ -36,13 +37,28 @@ namespace BookManagement_LaiTranNhatAnh
         {
             //Gọi trước khi load lại
             ResetListBookDataGrid();
-            ListBookDataGrid.ItemsSource = _bookService.GetAllBooks();
         }
 
         //Reset DataGrid
-        private void ResetListBookDataGrid()
+        private void ResetListBookDataGrid() //Reset DataGrid source trước khi làm mới lại
         {
             ListBookDataGrid.ItemsSource = null;
+            ListBookDataGrid.ItemsSource = _bookService.GetAllBooks();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string bookName = BookNameTextBox.Text;
+            string description = DescriptionTextBox.Text;
+            var list = _bookService.SearchBooksByNameOrDescriptionContaining(bookName, description);
+            if (!list.IsNullOrEmpty())
+            {
+                ListBookDataGrid.ItemsSource = list;
+            }
+            else
+            {
+                MessageBox.Show($"Not found any books with book name: {bookName} and description: {description}");
+            }
         }
     }
 }

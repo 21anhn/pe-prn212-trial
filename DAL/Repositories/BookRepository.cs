@@ -20,5 +20,14 @@ namespace DAL.Repositories
             //Lazy Fetching data -> get all data from db (include FK column)
             return _context.Books.Include(book => book.BookCategory).ToList();
         }
+
+        public List<Book> GetAllBookByBookNameOrDescription(string bookName, string description)
+        {
+            _context = new();
+
+            return _context.Books
+                .Where(b => b.BookName.Contains(bookName) || b.Description.Contains(description))
+                .Include(book => book.BookCategory).ToList();
+        }
     }
 }

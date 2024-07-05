@@ -37,6 +37,7 @@ namespace BookManagement_LaiTranNhatAnh
         {
             //Gọi trước khi load lại
             ResetListBookDataGrid();
+            WelcomeLabel.Content = "Welcome, " + CurrentUser.FullName;
         }
 
         //Reset DataGrid
@@ -80,6 +81,25 @@ namespace BookManagement_LaiTranNhatAnh
                     ResetListBookDataGrid();
                 }
             }
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            BookDetailsWindow bookDetailsWindow = new();
+            bookDetailsWindow.ShowDialog();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new();
+            loginWindow.Show();
+            //Logout
+            Close();
         }
     }
 }

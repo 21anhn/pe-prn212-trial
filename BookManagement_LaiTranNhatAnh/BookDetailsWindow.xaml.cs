@@ -42,6 +42,18 @@ namespace BookManagement_LaiTranNhatAnh
             BookCategoryComboBox.ItemsSource = _categoryService.GetAllCategories();
             BookCategoryComboBox.DisplayMemberPath = "BookGenreType";
             BookCategoryComboBox.SelectedValuePath = "BookCategoryId";
+            //Nếu là update
+            if (_currentBook != null)
+            {
+                BookIdTextBox.Text = _currentBook.BookId + "";
+                BookNameTextBox.Text = _currentBook.BookName;
+                DescriptionTextBox.Text = _currentBook.Description;
+                PublicationDateDatePicker.Text = _currentBook.PublicationDate.ToString();
+                QuantityTextBox.Text = _currentBook.Quantity + "";
+                PriceTextBox.Text = _currentBook.Price + "";
+                AuthorTextBox.Text = _currentBook.Author;
+                BookCategoryComboBox.SelectedValue = _currentBook.BookCategoryId;
+            }
         }
 
         private void SaveButton_Click_1(object sender, RoutedEventArgs e)
@@ -55,6 +67,7 @@ namespace BookManagement_LaiTranNhatAnh
             var price = double.Parse(PriceTextBox.Text);
             string author = AuthorTextBox.Text;
             int categoryId = int.Parse(BookCategoryComboBox.SelectedValue.ToString());
+
             Book b = new Book()
             {
                 BookId = bookId,
@@ -66,14 +79,27 @@ namespace BookManagement_LaiTranNhatAnh
                 Quantity = quantity,
                 BookCategoryId = categoryId
             };
+            if (_currentBook != null)
+            {
+                bool checkUpdate = _bookService.UpdateBook(b);
+                if (checkUpdate)
+                {
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error in updating book!", "Warning");
+                }
+                return;
+            }
             bool checkCreate = _bookService.CreateBook(b);
-            if(checkCreate)
+            if (checkCreate)
             {
                 Close();
             }
             else
             {
-                MessageBox.Show("Error in save book!", "Warning");
+                MessageBox.Show("Error in saving book!", "Warning");
             }
         }
     }

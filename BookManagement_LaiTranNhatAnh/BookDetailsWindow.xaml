@@ -16,7 +16,7 @@
         <Label Content="Book Name" HorizontalAlignment="Left" Margin="21,162,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="-0.076,0.91"/>
         <TextBox x:Name="BookNameTextBox" HorizontalAlignment="Left" Margin="118,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="272,162,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="-0.076,0.91"/>
-        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="366,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="366,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="18.1"/>
         <Label Content="Publication Date" HorizontalAlignment="Left" Margin="23,209,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="-0.076,0.91"/>
         <DatePicker x:Name="PublicationDateDatePicker" HorizontalAlignment="Left" Margin="176,213,0,0" VerticalAlignment="Top" Width="142"/>
         <Label Content="Quantity" HorizontalAlignment="Left" Margin="21,254,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="-0.076,0.91"/>
@@ -27,6 +27,6 @@
         <TextBox x:Name="AuthorTextBox" HorizontalAlignment="Left" Margin="118,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Book Category" HorizontalAlignment="Left" Margin="272,309,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="-0.076,0.91"/>
         <ComboBox x:Name="BookCategoryComboBox" HorizontalAlignment="Left" Margin="410,314,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="23,374,0,0" VerticalAlignment="Top" Height="40" Width="184" FontSize="20" FontWeight="Bold" FontFamily="Arial Black" Click="SaveButton_Click_1"/>
+        <Button x:Name="CreateButton" Content="Save" HorizontalAlignment="Left" Margin="23,374,0,0" VerticalAlignment="Top" Height="40" Width="184" FontSize="20" FontWeight="Bold" FontFamily="Arial Black" Click="SaveButton_Click_1"/>
     </Grid>
 </Window>

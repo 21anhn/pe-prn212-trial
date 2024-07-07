@@ -30,6 +30,12 @@ namespace BLL.Services
             return _bookRepository.CreateBook(b);  
         }
 
+        public bool UpdateBook(Book b)
+        {
+            _bookRepository = new();
+            return _bookRepository.UpdateBook(b);
+        }
+
         public bool DeleteBook(Book b)
         {
             _bookRepository = new();

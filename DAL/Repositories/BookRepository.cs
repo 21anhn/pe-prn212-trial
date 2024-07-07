@@ -40,6 +40,16 @@ namespace DAL.Repositories
             return true;
         }
 
+        public bool UpdateBook(Book b)
+        {
+            if (b == null)
+                return false;
+            _context = new();
+            _context.Books.Update(b);
+            _context.SaveChanges();
+            return true;
+        }
+
         public bool DeleteBook(Book b)
         {
             _context = new();

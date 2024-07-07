@@ -98,7 +98,17 @@ namespace BookManagement_LaiTranNhatAnh
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var book = ListBookDataGrid.SelectedItem as Book;
+            if(book == null)
+            {
+                MessageBox.Show("Please selecte item!", "Warning", MessageBoxButton.OK);
+            }
+            else
+            {
+                BookDetailsWindow bookDetailsWindow = new(book);
+                bookDetailsWindow.ShowDialog();
+                ResetListBookDataGrid(); //Reset data after update
+            }
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)

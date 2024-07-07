@@ -20,11 +20,19 @@ namespace BLL.Services
 
         public List<Book> SearchBooksByNameOrDescriptionContaining(string bookName, string description)
         {
+            _bookRepository = new();
             return _bookRepository.GetAllBookByBookNameOrDescription(bookName, description);
+        }
+
+        public bool CreateBook(Book b)
+        {
+            _bookRepository = new();
+            return _bookRepository.CreateBook(b);  
         }
 
         public bool DeleteBook(Book b)
         {
+            _bookRepository = new();
             return _bookRepository.DeleteBook(b);
         }
     }

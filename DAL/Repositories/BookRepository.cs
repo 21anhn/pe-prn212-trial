@@ -30,6 +30,16 @@ namespace DAL.Repositories
                 .Include(book => book.BookCategory).ToList();
         }
 
+        public bool CreateBook(Book b)
+        {
+            if(b == null)  
+                return false;
+            _context = new();
+            _context.Books.Add(b);
+            _context.SaveChanges();
+            return true;
+        }
+
         public bool DeleteBook(Book b)
         {
             _context = new();

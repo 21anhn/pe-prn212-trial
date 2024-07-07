@@ -66,7 +66,7 @@ namespace BookManagement_LaiTranNhatAnh
         {
 
             //Only Admin can delete
-            if(CurrentUser.Role != 1)
+            if (CurrentUser.Role != 1)
             {
                 MessageBox.Show("You have no permission to access this function!", "Warning", MessageBoxButton.OK);
                 return;
@@ -85,8 +85,15 @@ namespace BookManagement_LaiTranNhatAnh
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            //Only Admin can delete
+            if (CurrentUser.Role != 1)
+            {
+                MessageBox.Show("You have no permission to access this function!", "Warning", MessageBoxButton.OK);
+                return;
+            }
             BookDetailsWindow bookDetailsWindow = new();
             bookDetailsWindow.ShowDialog();
+            ResetListBookDataGrid();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)

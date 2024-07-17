@@ -72,6 +72,11 @@ namespace BookManagement_LaiTranNhatAnh
                 return;
             }
             var book = ListBookDataGrid.SelectedItem as Book;
+            if (book == null)
+            {
+                MessageBox.Show("Please select item!", "Warning", MessageBoxButton.OK);
+                return;
+            }
             var result = MessageBox.Show("Do you want to delete this book?", "Confirm deletion", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
@@ -101,7 +106,7 @@ namespace BookManagement_LaiTranNhatAnh
             var book = ListBookDataGrid.SelectedItem as Book;
             if(book == null)
             {
-                MessageBox.Show("Please selecte item!", "Warning", MessageBoxButton.OK);
+                MessageBox.Show("Please select item!", "Warning", MessageBoxButton.OK);
             }
             else
             {

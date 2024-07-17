@@ -42,10 +42,13 @@ namespace BookManagement_LaiTranNhatAnh
             BookCategoryComboBox.ItemsSource = _categoryService.GetAllCategories();
             BookCategoryComboBox.DisplayMemberPath = "BookGenreType";
             BookCategoryComboBox.SelectedValuePath = "BookCategoryId";
+            BookCategoryComboBox.SelectedValue = 1;
             //Nếu là update
             if (_currentBook != null)
             {
+                BookModeLabel.Content = "Update Book";
                 BookIdTextBox.Text = _currentBook.BookId + "";
+                BookIdTextBox.IsEnabled = false;
                 BookNameTextBox.Text = _currentBook.BookName;
                 DescriptionTextBox.Text = _currentBook.Description;
                 PublicationDateDatePicker.Text = _currentBook.PublicationDate.ToString();
@@ -54,6 +57,27 @@ namespace BookManagement_LaiTranNhatAnh
                 AuthorTextBox.Text = _currentBook.Author;
                 BookCategoryComboBox.SelectedValue = _currentBook.BookCategoryId;
             }
+        }
+
+        private bool Validate(Book b)
+        {
+            var price = Double.Parse(PriceTextBox.Text);
+            if (price < 0 || price >= 4000000)
+                return false;
+            var quantity = int.Parse(QuantityTextBox.Text);
+            if (quantity < 0 || quantity >= 4000000)
+                return false;
+            var bookName = BookNameTextBox.Text;
+            int length = bookName.Length;
+            if (length < 5 || length > 90)
+                return false;
+            var words = bookName.Trim().Split(' ');
+            foreach(var w in words)
+            {
+                if (Char.IsUpper(w[0]))
+                    return false;
+            }
+            return true;
         }
 
         private void SaveButton_Click_1(object sender, RoutedEventArgs e)
@@ -79,6 +103,7 @@ namespace BookManagement_LaiTranNhatAnh
                 Quantity = quantity,
                 BookCategoryId = categoryId
             };
+
             if (_currentBook != null)
             {
                 bool checkUpdate = _bookService.UpdateBook(b);

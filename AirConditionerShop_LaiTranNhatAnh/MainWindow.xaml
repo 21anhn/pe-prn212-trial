@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AirConditionerShop_LaiTranNhatAnh"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="330" Width="600" FontFamily="Arial" FontSize="14" Background="#FFD4F7D4" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
+        <DataGrid x:Name="ListAirConditionerDataGrid" Margin="10,114,130,10" AutoGenerateColumns="False" SelectionChanged="ListAirConditionerDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="AirConditionerId" Binding="{Binding AirConditionerId}"/>
+                <DataGridTextColumn Header="AirConditionerName" Binding="{Binding AirConditionerName}"/>
+                <DataGridTextColumn Header="Warranty" Binding="{Binding Warranty}"/>
+                <DataGridTextColumn Header="SoundPressureLevel" Binding="{Binding SoundPressureLevel}"/>
+                <DataGridTextColumn Header="FeatureFunction" Binding="{Binding FeatureFunction}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="DollarPrice" Binding="{Binding DollarPrice}"/>
+                <DataGridTextColumn Header="SupplierName" Binding="{Binding Supplier.SupplierName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="CreateButton" Content="Create" HorizontalAlignment="Left" Margin="485,150,0,0" VerticalAlignment="Top" Height="23" Width="88"/>
+        <Button x:Name="UpdateButton" Content="Update" HorizontalAlignment="Left" Margin="485,183,0,0" VerticalAlignment="Top" Height="23" Width="88" Click="Button_Click"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="485,219,0,0" VerticalAlignment="Top" Height="23" Width="88"/>
+        <Label Content="List Air Conditioners" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Feature Function" HorizontalAlignment="Left" Margin="18,53,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="FeatureFunctionTextBox" HorizontalAlignment="Left" Margin="146,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="23"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Margin="304,53,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="QuantityTextBox" HorizontalAlignment="Left" Margin="388,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="23"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="485,86,0,0" VerticalAlignment="Top" Height="25" Width="88" Click="SearchButton_Click"/>
+        <Label x:Name="WelcomeLabel" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Air Conditioners Management v0.1" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="485,254,0,0" VerticalAlignment="Top" Height="25" Width="88" Click="SearchButton_Click"/>
 
     </Grid>
 </Window>

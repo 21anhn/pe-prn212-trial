@@ -1,0 +1,19 @@
+﻿<Window x:Class="AirConditionerShop_LaiTranNhatAnh.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirConditionerShop_LaiTranNhatAnh"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="330" Width="600" FontFamily="Arial" FontSize="14" Background="#FFD4F7D4" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="254" Stroke="Black" VerticalAlignment="Center" Width="540" RadiusX="24.5" RadiusY="24.5"/>
+        <Label Content="Login Form" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="94,114,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="96,169,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Margin="228,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="32"/>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="230,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" Height="32" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="230,229,0,0" VerticalAlignment="Top" Height="25" Width="70" Click="LoginButton_Click"/>
+        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="323,229,0,0" VerticalAlignment="Top" Height="25" Width="70" Click="QuitButton_Click"/>
+    </Grid>
+</Window>
